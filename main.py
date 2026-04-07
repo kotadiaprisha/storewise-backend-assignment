@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from datetime import datetime
 from sqlalchemy import text
+from rapidfuzz import process
 
 from app.task_logic import *
 
@@ -124,9 +125,10 @@ def question6_route(query: str, db: Session = Depends(get_db)):
     return question6(db, query)
 
 # Question 7
-@app.get("/tasks/question7")
-def question7_route(db: Session,task1_id,task2_id = Depends(get_db)):
-   return question7(db,task1_id,task2_id)
+#@app.get("/tasks/question7")
+#def question7_route(db: Session,task1_id,task2_id = Depends(get_db)):
+  # return question7(db,task1_id,task2_id)
+ # return {"result":"okay"}
 
 # Question 8
 @app.get("/tasks/question8/")
